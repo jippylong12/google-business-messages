@@ -1,9 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
+  "onOf": [
+    {
+      "required": ["oauth"],
+      "type": "object",
+      "properties": {
+        "oauth": {
+          "$ref": "authentication_request/oauth.json"
+        }
+      }
     }
-  }
+  ]
 }
