@@ -6,15 +6,15 @@
       "type": "string"
     },
     "messageId": {
-      "type": "integer"
+      "type": "string"
     },
     "representative": {
-      "$ref": "representative.json"
+      "$ref": "lib/google_business_messages/utils/schemas/message/representative.json"
     },
     "suggestions": {
       "type": "array",
       "items": {
-        "$ref": "suggestion.json"
+        "$ref": "lib/google_business_messages/utils/schemas/message/suggestion.json"
       }
     },
     "fallback": {
@@ -38,7 +38,7 @@
       "required": ["image"],
       "properties": {
         "image": {
-          "$ref": "image.json"
+          "$ref": "lib/google_business_messages/utils/schemas/message/image.json"
         }
       }
     },
@@ -46,7 +46,7 @@
       "required": ["richCard"],
       "properties": {
         "richCard": {
-          "$ref": "rich_card.json"
+          "$ref": "lib/google_business_messages/utils/schemas/message/rich_card.json"
         }
       }
     }

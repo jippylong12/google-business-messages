@@ -13,8 +13,13 @@ class GoogleBusinessMessages::TestSchemaValidator < Minitest::Test
     data = {
       name: "howdy",
       text: "howdy",
+      messageId: 'dsafsdfadf',
+      representative: {
+        representativeType: "BOT"
+      }
     }
     success, errors = GoogleBusinessMessages::Utils::SchemaValidator.validate(folder: 'message', filename: 'message', data: data)
+    puts errors.join("").split("\n")
     assert success
   end
 

@@ -7,7 +7,7 @@
       "enum": [
         "CARD_WIDTH_UNSPECIFIED",
         "SMALL",
-        "MEDIUM",
+        "MEDIUM"
       ]
     },
     "cardContents": {
