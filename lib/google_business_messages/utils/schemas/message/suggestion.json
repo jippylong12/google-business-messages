@@ -1,16 +1,42 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
+  "oneOf": [
+    {
+      "required": ["reply"],
+      "type": "object",
+      "properties": {
+        "reply": {
+          "$ref": "suggestion/suggested_reply.json"
+        }
+      }
     },
-    "messageId": {
-      "type": "integer"
+    {
+      "required": ["action"],
+      "type": "object",
+      "properties": {
+        "action": {
+          "$ref": "suggestion/suggested_action.json"
+        }
+      }
     },
-    "representative": {
-      "type": "Representative"
+    {
+      "required": ["liveAgentRequest"],
+      "type": "object",
+      "properties": {
+        "liveAgentRequest": {
+          "$ref": "suggestion/live_agent_request.json"
+        }
+      }
     },
-    ],
-    "required": ["name"]
-  }
+    {
+      "required": ["authenticationRequest"],
+      "type": "object",
+      "properties": {
+        "authenticationRequest": {
+          "$ref": "suggestion/authentication_request.json"
+        }
+      }
+    }
+  ]
+}

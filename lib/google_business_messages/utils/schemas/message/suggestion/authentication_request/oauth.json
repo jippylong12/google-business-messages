@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "clientId": {
+      "type": "string"
+    },
+    "codeChallenge": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "codeChallengeMethod": {
+      "type": "string"
+    }
+  },
+  "required": ["clientId", "codeChallenge", "scopes"]
+}

@@ -12,7 +12,10 @@
       "$ref": "representative.json"
     },
     "suggestions": {
-      "$ref": "suggestion.json",
+      "type": "array",
+      "items": {
+        "$ref": "suggestion.json"
+      }
     },
     "fallback": {
       "type": "string"
