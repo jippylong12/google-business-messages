@@ -15,7 +15,25 @@ class GoogleBusinessMessages::TestSchemaValidator < Minitest::Test
       text: "howdy",
       messageId: 'dsafsdfadf',
       representative: {
-        representativeType: "BOT"
+        representativeType: "HUMAN"
+      }
+    }
+    success, errors = GoogleBusinessMessages::Utils::SchemaValidator.validate(folder: 'message', filename: 'message', data: data)
+    puts errors.join("").split("\n")
+    assert success
+  end
+
+  def test_message_image_validation
+    data = {
+      name: "howdy",
+      image: {
+        contentInfo: {
+          fileUrl: "blah",
+        }
+      },
+      messageId: 'dsafsdfadf',
+      representative: {
+        representativeType: "HUMAN"
       }
     }
     success, errors = GoogleBusinessMessages::Utils::SchemaValidator.validate(folder: 'message', filename: 'message', data: data)

@@ -15,5 +15,5 @@
       "type": "string"
     }
   },
-  "required": ["fileUrl", "forceRefresh", "altText"]
+  "required": ["fileUrl"]
 }
