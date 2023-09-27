@@ -5,5 +5,6 @@
     "url": {
       "type": "string"
     }
-  }
+  },
+  "required": ["url"]
 }
