@@ -1,5 +1,4 @@
 require 'faraday'
-require "json-schema"
 
 require_relative "google_business_messages/version"
 require_relative 'google_business_messages/messages/messages'
