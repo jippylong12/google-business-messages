@@ -2,8 +2,31 @@
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
   "properties": {
-    "name": {
+    "text": {
+      "type": "string"
+    },
+    "postbackData": {
       "type": "string"
     }
-  }
+  },
+  "oneOf": [
+    {
+      "required": ["openUrlAction"],
+      "type": "object",
+      "properties": {
+        "openUrlAction": {
+          "$ref": "suggest_action/open_url_action.json"
+        }
+      }
+    },
+    {
+      "required": ["dialAction"],
+      "type": "object",
+      "properties": {
+        "dialAction": {
+          "$ref": "suggest_action/dial_action.json"
+        }
+      }
+    }
+  ]
 }
