@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "type": "object",
+  "properties": {
+    "cardWidth": {
+      "type": "string",
+      "enum": [
+        "CARD_WIDTH_UNSPECIFIED",
+        "SMALL",
+        "MEDIUM",
+      ]
+    },
+    "cardContents": {
+      "type": "array",
+      "items": {
+        "$ref": "shared/card_content.json"
+      }
+    }
+  }
+}

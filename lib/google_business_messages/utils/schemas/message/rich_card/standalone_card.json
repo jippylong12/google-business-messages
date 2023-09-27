@@ -2,9 +2,12 @@
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
   "properties": {
-    "cardContent": {
-      "$ref": "shared/card_content.json"
+    "cardContents": {
+      "type": "array",
+      "items": {
+        "$ref": "shared/card_content.json"
+      }
     }
   },
-  "required": ["cardContent"]
+  "required": ["cardContents"]
 }
