@@ -6,9 +6,15 @@ module GoogleBusinessMessages
       @client = client
     end
 
-    def create
-      puts "we are creating"
-      'create'
+    def create(conversation_id:)
+
+      response = @connection.post("conversations/#{conversation_id}/messages", body.to_json, {'Content-Type': 'application/json'})
+      response_body = JSON.parse response.body
+      if response.success?
+        true
+      else
+        false
+      end
     end
 
     def list

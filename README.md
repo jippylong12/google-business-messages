@@ -1,24 +1,50 @@
 # GoogleBusinessMessages
 
-TODO: Delete this and the text below, and describe your gem
+Simple, efficient API wrapper for [the Google Business Messages API](https://developers.google.com/business-communications/business-messages/reference/rest). It tries not to be opinionated in handling responses and **it assumes you have already have a valid OAuth2 token**. 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/google/business/messages`. To experiment with that code, run `bin/console` for an interactive prompt.
-
+If you do not have an OAuth2 token, please review these links
+1) [Ruby Google Auth Library](https://github.com/googleapis/google-auth-library-ruby)
+2) [Google OAuth2 Overview](https://developers.google.com/identity/protocols/oauth2)
+   1) [Google OAuth2 FlowChart](https://developers.google.com/static/identity/protocols/oauth2/images/flows/authorization-code.png)
 ## Installation
-
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add google-business-messages
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install google-business-messages
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialize
+```ruby
+client = GoogleBusinessMessages::Client.new(auth_token: 'HOWDY')
+```
+
+
+### Messages
+
+#### Create - Simple Text
+```ruby
+client.messages.create(conversation_id: '3e3ef73d-d16f-4a5d-b976-256ba5625c88', 
+                       content: "howdy y'all", 
+                       message_id: 'd64419d8-bbd5-41fb-84eb-f43ba4fa6629')
+```
+
+#### Create - Image
+declare the content_type if not sending TEXT | defaults: 'TEXT'
+
+content_type options:  ['TEXT', 'IMAGE', 'RICH']
+
+```ruby
+client.messages.create(conversation_id: '3e3ef73d-d16f-4a5d-b976-256ba5625c88', 
+                       content: "https://publically.available.image.com", 
+                       content_type: GoogleBusinessMessages::Messages::CONTENT_TYPES[:image],
+                       message_id: 'd64419d8-bbd5-41fb-84eb-f43ba4fa6629')
+```
+
 
 ## Development
 
