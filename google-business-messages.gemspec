@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/google/business/messages/version"
+require_relative "lib/google_business_messages/version"
 
 Gem::Specification.new do |spec|
   spec.name = "google-business-messages"
-  spec.version = Google::Business::Messages::VERSION
+  spec.version = GoogleBusinessMessages::VERSION
   spec.authors = ["marcus.salinas"]
   spec.email = ["12.marcus.salinas@gmail.com"]
 

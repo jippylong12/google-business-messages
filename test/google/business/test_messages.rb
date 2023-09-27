@@ -2,9 +2,9 @@
 
 require "test_helper"
 
-class Google::Business::TestMessages < Minitest::Test
+class GoogleBusinessMessages::TestMessages < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Google::Business::Messages::VERSION
+    refute_nil ::GoogleBusinessMessages::VERSION
   end
 
   def test_it_does_something_useful
