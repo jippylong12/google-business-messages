@@ -1,5 +1,9 @@
 require 'faraday'
+
 require_relative "google_business_messages/version"
+require_relative 'google_business_messages/messages/messages'
+require_relative 'google_business_messages/surveys/surveys'
+require_relative 'google_business_messages/events/events'
 
 module GoogleBusinessMessages
   class Error < StandardError; end
@@ -15,5 +19,16 @@ module GoogleBusinessMessages
       end
     end
 
+    def events
+      @events ||= Events.new(self)
+    end
+
+    def messages
+      @messages ||= Messages.new(self)
+    end
+
+    def surveys
+      @surveys ||= Surveys.new(self)
+    end
   end
 end
