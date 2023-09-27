@@ -5,6 +5,7 @@ require_relative "google_business_messages/version"
 require_relative 'google_business_messages/messages/messages'
 require_relative 'google_business_messages/surveys/surveys'
 require_relative 'google_business_messages/events/events'
+require_relative 'google_business_messages/utils/schema_validator'
 
 module GoogleBusinessMessages
   class Error < StandardError; end
