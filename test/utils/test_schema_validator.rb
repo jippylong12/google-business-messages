@@ -12,8 +12,9 @@ class GoogleBusinessMessages::TestSchemaValidator < Minitest::Test
   def test_messages_validation
     data = {
       name: "howdy",
+      text: "howdy",
     }
-    success, errors = GoogleBusinessMessages::Utils::SchemaValidator.validate(filename: 'message', data: data)
+    success, errors = GoogleBusinessMessages::Utils::SchemaValidator.validate(folder: 'message', filename: 'message', data: data)
     assert success
   end
 

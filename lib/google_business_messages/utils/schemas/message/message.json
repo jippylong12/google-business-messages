@@ -9,10 +9,10 @@
       "type": "integer"
     },
     "representative": {
-      "type": "object"
+      "$ref": "representative.json"
     },
     "suggestions": {
-      "type": "object"
+      "$ref": "suggestion.json",
     },
     "fallback": {
       "type": "string"
@@ -35,7 +35,7 @@
       "required": ["image"],
       "properties": {
         "image": {
-          "type": "Image"
+          "$ref": "image.json"
         }
       }
     },
@@ -43,7 +43,7 @@
       "required": ["richCard"],
       "properties": {
         "richCard": {
-          "type": "RichCard"
+          "$ref": "rich_card.json"
         }
       }
     }
