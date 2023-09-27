@@ -1,16 +1,28 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
+  "oneOf": [
+    {
+      "required": [
+        "standaloneCard"
+      ],
+      "type": "object",
+      "properties": {
+        "standaloneCard": {
+          "$ref": "rich_card/standalone_card.json"
+        }
+      }
     },
-    "messageId": {
-      "type": "integer"
-    },
-    "representative": {
-      "type": "Representative"
-    },
-    ],
-    "required": ["name"]
-  }
+    {
+      "required": [
+        "carouselCard"
+      ],
+      "type": "object",
+      "properties": {
+        "carouselCard": {
+          "$ref": "rich_card/carousel_card.json"
+        }
+      }
+    }
+  ]
+}

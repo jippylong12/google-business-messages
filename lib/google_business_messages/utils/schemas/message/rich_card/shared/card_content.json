@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "media": {
+      "$ref": "card_content/media.json"
+    },
+    "suggestions": {
+      "type": "array",
+      "items": {
+        "$ref": "../../suggestion.json"
+      }
+    }
+  }
+}

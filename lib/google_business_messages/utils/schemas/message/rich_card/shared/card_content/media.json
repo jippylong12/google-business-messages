@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "type": "object",
+  "properties": {
+    "height": {
+      "type": "string",
+      "enum": [
+        "HEIGHT_UNSPECIFIED",
+        "SHORT",
+        "MEDIUM",
+        "TALL"
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "contentInfo"
+      ],
+      "type": "object",
+      "properties": {
+        "contentInfo": {
+          "$ref": "../../../image/content_info.json"
+        }
+      }
+    }
+  ]
+}
