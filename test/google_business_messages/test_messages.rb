@@ -7,7 +7,8 @@ class GoogleBusinessMessages::TestMessages < Minitest::Test
     refute_nil ::GoogleBusinessMessages::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_we_can_create_client
+    client = GoogleBusinessMessages::Client.new(auth_token: 'howdy')
+    assert client != nil
   end
 end

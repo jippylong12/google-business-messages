@@ -1,4 +1,6 @@
+require 'faraday'
 require_relative "google_business_messages/version"
+
 module GoogleBusinessMessages
   class Error < StandardError; end
 
