@@ -6,13 +6,18 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
     base64 (0.1.1)
     faraday (2.7.11)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    json-schema (4.1.1)
+      addressable (>= 2.8)
     minitest (5.16.3)
+    public_suffix (5.0.3)
     rake (13.0.6)
     ruby2_keywords (0.0.5)
 
@@ -22,6 +27,7 @@ PLATFORMS
 DEPENDENCIES
   faraday (~> 2.7)
   google-business-messages!
+  json-schema (~> 4.1)
   minitest (~> 5.0)
   rake (~> 13.0)
 

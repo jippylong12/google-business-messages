@@ -10,3 +10,5 @@ gem "rake", "~> 13.0"
 gem "minitest", "~> 5.0"
 
 gem "faraday", "~> 2.7"
+
+gem "json-schema", "~> 4.1"

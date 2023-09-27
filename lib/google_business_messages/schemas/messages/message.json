@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "messageId": {
+      "type": "integer"
+    },
+    "representative": {
+      "type": "object"
+    },
+    "suggestions": {
+      "type": "object"
+    },
+    "fallback": {
+      "type": "string"
+    },
+    "containsRichText": {
+      "type": "boolean"
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["text"],
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "required": ["image"],
+      "properties": {
+        "image": {
+          "type": "Image"
+        }
+      }
+    },
+    {
+      "required": ["richCard"],
+      "properties": {
+        "richCard": {
+          "type": "RichCard"
+        }
+      }
+    }
+  ],
+  "required": ["name"]
+}
