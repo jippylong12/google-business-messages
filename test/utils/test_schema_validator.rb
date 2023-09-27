@@ -11,7 +11,6 @@ class GoogleBusinessMessages::TestSchemaValidator < Minitest::Test
 
   def test_messages_validation
     data = {
-      name: "howdy",
       text: "howdy",
       messageId: 'dsafsdfadf',
       representative: {
@@ -25,7 +24,6 @@ class GoogleBusinessMessages::TestSchemaValidator < Minitest::Test
 
   def test_message_image_validation
     data = {
-      name: "howdy",
       image: {
         contentInfo: {
           fileUrl: "blah",
