@@ -2,15 +2,20 @@
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
   "properties": {
-    "name": {
+    "displayName": {
       "type": "string"
     },
-    "messageId": {
-      "type": "integer"
+    "avatarImage": {
+      "type": "string"
     },
-    "representative": {
-      "type": "Representative"
-    },
-  ],
-  "required": ["name"]
+    "representativeType": {
+      "type": "string",
+      "enum": [
+        "REPRESENTATIVE_TYPE_UNSPECIFIED",
+        "BOT",
+        "HUMAN"
+      ]
+    }
+  },
+  "required": ["representativeType"]
 }
