@@ -1,16 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema",
   "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
-    },
-    "messageId": {
-      "type": "integer"
-    },
-    "representative": {
-      "type": "Representative"
-    },
-    ],
-    "required": ["name"]
-  }
+  "oneOf": [
+    {
+      "required": [
+        "contentInfo"
+      ],
+      "type": "object",
+      "properties": {
+        "contentInfo": {
+          "$ref": "image/content_info.json"
+        }
+      }
+    }
+  ]
+}
